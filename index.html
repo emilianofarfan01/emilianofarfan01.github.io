@@ -3,24 +3,188 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mi Página Personal</title>
+    <title>Emiliano Farfán | Arquitectura</title>
     <style>
+        /* =========================================
+           1. RESET Y CONFIGURACIÓN BASE
+           ========================================= */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin-top: 50px;
-            background-color: #f4f4f9;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+            background-color: #f7f7f7;
+            color: #111;
+            line-height: 1.4;
+            -webkit-font-smoothing: antialiased;
         }
-        h1 {
-            color: #333;
+
+        /* =========================================
+           2. NAVEGACIÓN FIJA MÁGICA
+           ========================================= */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 2rem 4vw;
+            display: flex;
+            justify-content: space-between;
+            mix-blend-mode: difference;
+            color: #fff;
+            z-index: 100;
         }
-        p {
+
+        nav a {
+            color: inherit;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        /* =========================================
+           3. SECCIÓN HERO (Pantalla completa)
+           ========================================= */
+        .hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 0 4vw;
+        }
+
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 9rem);
+            font-weight: 500;
+            letter-spacing: -0.04em;
+            line-height: 0.9;
+            margin-bottom: 2rem;
+            max-width: 90%;
+        }
+
+        .hero p {
+            font-size: clamp(1.2rem, 2vw, 1.8rem);
+            max-width: 600px;
+            color: #555;
+            font-weight: 300;
+        }
+
+        /* =========================================
+           4. LAYOUT TIPO GRID 
+           ========================================= */
+        .grid-section {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 2rem;
+            padding: 8rem 4vw;
+            background-color: #fff;
+        }
+
+        .grid-text {
+            grid-column: 1 / 5;
+            font-size: 1.2rem;
             color: #666;
+            font-weight: 300;
+        }
+
+        .grid-projects {
+            grid-column: 6 / -1;
+        }
+
+        /* =========================================
+           5. LISTA DE PROYECTOS MINIMALISTA
+           ========================================= */
+        .project-item {
+            border-top: 1px solid #ddd;
+            padding: 2.5rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: opacity 0.3s ease;
+        }
+
+        .project-item:hover {
+            opacity: 0.5;
+            cursor: pointer;
+        }
+
+        .project-item h2 {
+            font-size: clamp(1.5rem, 3vw, 3rem);
+            font-weight: 400;
+            letter-spacing: -0.02em;
+        }
+
+        .project-item span {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: #888;
+        }
+
+        /* =========================================
+           6. RESPONSIVO (Móviles)
+           ========================================= */
+        @media (max-width: 768px) {
+            .grid-text {
+                grid-column: 1 / -1;
+                margin-bottom: 3rem;
+            }
+            .grid-projects {
+                grid-column: 1 / -1;
+            }
+            .project-item {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 1rem;
+            }
         }
     </style>
 </head>
 <body>
-    <h1>¡Hola! Soy [Tu Nombre]</h1>
-    <p>Bienvenido a mi nueva página personal alojada en GitHub Pages.</p>
+
+    <!-- Navegación -->
+    <nav>
+        <a href="#">EF</a>
+        <a href="mailto:tu-correo@gmail.com">Contacto</a>
+    </nav>
+
+    <!-- Sección Principal -->
+    <header class="hero">
+        <h1>Emiliano<br>Farfán</h1>
+        <p>Arquitectura y diseño de espacios. Explorando la materialidad, la luz natural y el entorno urbano.</p>
+    </header>
+
+    <!-- Sección de Información y Proyectos -->
+    <section class="grid-section">
+        
+        <div class="grid-text">
+            <p>Especializado en proyectos residenciales, intervención urbana y diseño estructural con un enfoque minimalista y funcional.</p>
+        </div>
+
+        <div class="grid-projects">
+            
+            <div class="project-item">
+                <h2>Casa Refugio</h2>
+                <span>Arquitectura Residencial</span>
+            </div>
+
+            <div class="project-item">
+                <h2>Pabellón Concreto</h2>
+                <span>Diseño Comercial</span>
+            </div>
+
+            <div class="project-item">
+                <h2>Estudio Norte</h2>
+                <span>Intervención Urbana</span>
+            </div>
+
+        </div>
+
+    </section>
+
 </body>
 </html>
