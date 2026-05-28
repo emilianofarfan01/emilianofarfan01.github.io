@@ -94,6 +94,7 @@ body {
 /* =========================================
    3. ESTRUCTURAS DE PÁGINAS
    ========================================= */
+
 .welcome-screen {
     height: 100vh;
     display: flex;
@@ -102,6 +103,16 @@ body {
     align-items: center;
     text-align: center;
     padding: 0 4vw;
+    
+    /* --- NUEVO: Imagen de fondo --- */
+    /* El linear-gradient crea una capa oscura al 40% sobre la foto para dar legibilidad al texto */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('img/YOYLEO.jpeg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    
+    /* Cambiamos el texto a blanco para que resalte sobre la foto */
+    color: #ffffff; 
 }
 
 .welcome-screen h1 {
@@ -113,7 +124,8 @@ body {
 
 .welcome-screen p {
     font-size: clamp(1rem, 1.5vw, 1.2rem);
-    color: #666;
+    /* Cambiamos el gris oscuro por un gris muy claro/blanco roto */
+    color: #f0f0f0; 
     max-width: 600px;
     font-weight: 300;
 }
